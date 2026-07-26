@@ -75,7 +75,19 @@
 </head>
 
 <body class="text-white">
+<div class="fixed top-5 right-5 z-50 flex gap-2 glass rounded-xl p-2">
 
+<button onclick="setLanguage('de')"
+class="px-4 py-2 rounded-lg bg-blue-500/20 hover:bg-blue-500/40 transition">
+🇩🇪 DE
+</button>
+
+<button onclick="setLanguage('en')"
+class="px-4 py-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/40 transition">
+🇬🇧 EN
+</button>
+
+</div>
 <div class="blur1"></div>
 <div class="blur2"></div>
 
@@ -85,19 +97,27 @@
 
 <div class="p-10 lg:p-14 flex flex-col justify-center">
 
-<span class="inline-flex w-fit rounded-full bg-blue-500/20 border border-blue-400/30 px-4 py-1 text-blue-300 text-sm mb-6">
+<span  data-i18n="welcome"="inline-flex w-fit rounded-full bg-blue-500/20 border border-blue-400/30 px-4 py-1 text-blue-300 text-sm mb-6">
 🚀 Willkommen bei LokroMAIL
 </span>
 
 <h1 class="text-5xl font-black leading-tight">
+
+<span data-i18n="your">
 Deine neue
+</span>
+
 <span class="text-cyan-400">
 LokroMAIL
 </span>
-Adresse.
+
+<span data-i18n="address">
+Adresse
+</span>
+
 </h1>
 
-<p class="mt-8 text-gray-300 leading-8">
+<p data-i18n="description" class="mt-8 text-gray-300 leading-8">
 Erhalte deine persönliche kostenlose E-Mail-Adresse mit einer unserer Domains.
 </p>
 
@@ -106,8 +126,8 @@ Erhalte deine persönliche kostenlose E-Mail-Adresse mit einer unserer Domains.
 <div class="flex gap-4">
 <div class="text-cyan-400 text-xl">✓</div>
 <div>
-<h3 class="font-semibold">Persönliche Adresse</h3>
-<p class="text-gray-400 text-sm">
+<h3 data-i18n="featurePersonal" class="font-semibold">Persönliche Adresse</h3>
+<p data-i18n="featurePersonalDesc" class="text-gray-400 text-sm">
 mail.lokro.dev oder mail2.lokro.dev
 </p>
 </div>
@@ -116,8 +136,8 @@ mail.lokro.dev oder mail2.lokro.dev
 <div class="flex gap-4">
 <div class="text-cyan-400 text-xl">✓</div>
 <div>
-<h3 class="font-semibold">Kostenlos</h3>
-<p class="text-gray-400 text-sm">
+<h3 data-i18n="featureFree" class="font-semibold">Kostenlos</h3>
+<p data-i18n="featureFreeDesc" class="text-gray-400 text-sm">
 Keine versteckten Gebühren.
 </p>
 </div>
@@ -126,8 +146,8 @@ Keine versteckten Gebühren.
 <div class="flex gap-4">
 <div class="text-cyan-400 text-xl">✓</div>
 <div>
-<h3 class="font-semibold">Manuelle Freischaltung</h3>
-<p class="text-gray-400 text-sm">
+<h3 data-i18n="featureManual" class="font-semibold">Manuelle Freischaltung</h3>
+<p data-i18n="featureManualDesc" class="text-gray-400 text-sm">
 Jede Registrierung wird überprüft.
 </p>
 </div>
@@ -137,7 +157,7 @@ Jede Registrierung wird überprüft.
 
 <div class="mt-12 p-5 rounded-2xl border border-cyan-500/30 bg-cyan-500/10">
 
-<h3 class="font-semibold text-cyan-300">
+<h3 data-i18n="noticeTitle" class="font-semibold text-cyan-300">
 📨 Wichtiger Hinweis
 </h3>
 
@@ -145,7 +165,7 @@ Jede Registrierung wird überprüft.
 Nachdem du das Formular abgesendet hast, erhältst du nach der Bearbeitung eine Antwort an deine angegebene E-Mail-Adresse.
 </p>
 
-<p class="mt-4 text-gray-300 text-sm leading-7">
+<p data-i18n="sender" class="mt-4 text-gray-300 text-sm leading-7">
 Die Antwort wird von
 <strong>lokrogamer29@gmail.com</strong>
 oder
@@ -159,12 +179,12 @@ gesendet und enthält alle Informationen zu deiner neuen LokroMAIL-Adresse.
 
 <div class="bg-slate-950/60 p-10 lg:p-14">
 
-<h2 class="text-3xl font-bold mb-8">
+<h2 data-i18n="registration" class="text-3xl font-bold mb-8">
 Registrierung
 </h2>
 
 <form
-action="https://formsubmit.co/DEINEEMAIL@example.com"
+action="https://formsubmit.co/support@mail.lokro.dev"
 method="POST"
 class="space-y-6">
 
@@ -172,7 +192,7 @@ class="space-y-6">
 <input type="hidden" name="_subject" value="Neue LokroMAIL Registrierung">
 
 <div>
-<label class="text-sm text-gray-300">
+<label data-i18n="name" class="text-sm text-gray-300">
 Vollständiger Name
 </label>
 
@@ -184,7 +204,7 @@ placeholder="Max Mustermann">
 </div>
 
 <div>
-<label class="text-sm text-gray-300">
+<label data-i18n="age" class="text-sm text-gray-300">
 Alter
 </label>
 
@@ -199,7 +219,7 @@ placeholder="16">
 </div>
 
 <div>
-<label class="text-sm text-gray-300">
+<label data-i18n="oldEmail" class="text-sm text-gray-300">
 Bisherige E-Mail-Adresse
 </label>
 
@@ -212,7 +232,7 @@ placeholder="beispiel@gmail.com">
 </div>
 
 <div>
-<label class="text-sm text-gray-300">
+<label data-i18n="username" class="text-sm text-gray-300">
 Gewünschter Benutzername
 </label>
 
@@ -239,13 +259,13 @@ class="rounded-r-xl border border-l-0 border-gray-700 bg-slate-900 px-4">
 </div>
 
 <button
-class="w-full rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 py-4 font-bold text-lg hover:scale-[1.02] duration-300 shadow-[0_0_35px_rgba(59,130,246,.45)]">
+data-i18n="submit" class="w-full rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 py-4 font-bold text-lg hover:scale-[1.02] duration-300 shadow-[0_0_35px_rgba(59,130,246,.45)]">
 
 ✨ Registrierung absenden
 
 </button>
 
-<p class="text-center text-xs text-gray-500 leading-6">
+<p data-i18n="confirm" class="text-center text-xs text-gray-500 leading-6">
 Mit dem Absenden bestätigst du, dass deine Angaben korrekt sind. Deine Registrierung wird manuell geprüft.
 </p>
 
@@ -305,25 +325,61 @@ address:"address.",
 description:
 "Get your personal free email address with one of our domains.",
 
-registration:"Registration",
 
-name:"Full name",
+featurePersonal:
+"Personal address",
 
-age:"Age",
+featurePersonalDesc:
+"mail.lokro.dev or mail2.lokro.dev",
 
-oldEmail:"Previous email address",
 
-username:"Desired username",
+featureFree:
+"Free",
 
-submit:"✨ Submit registration",
+featureFreeDesc:
+"No hidden fees.",
 
-noticeTitle:"📨 Important notice",
+
+featureManual:
+"Manual activation",
+
+featureManualDesc:
+"Every registration is reviewed.",
+
+
+noticeTitle:
+"📨 Important notice",
 
 notice:
 "After submitting the form, you will receive a reply to your provided email address after processing.",
 
 sender:
-"The reply will be sent from lokrogamer29@gmail.com or lokrogaming26@gmail.com and contains all information about your new LokroMAIL address."
+"The reply will be sent from <strong>lokrogamer29@gmail.com</strong> or <strong>lokrogaming26@gmail.com</strong> and contains all information about your new LokroMAIL address.",
+
+
+registration:
+"Registration",
+
+
+name:
+"Full name",
+
+age:
+"Age",
+
+oldEmail:
+"Previous email address",
+
+username:
+"Desired username",
+
+
+submit:
+"✨ Submit registration",
+
+
+confirm:
+"By submitting this form, you confirm that your information is correct. Your registration will be manually reviewed."
 
 }
 

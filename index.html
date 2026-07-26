@@ -141,7 +141,7 @@ Jede Registrierung wird überprüft.
 📨 Wichtiger Hinweis
 </h3>
 
-<p class="mt-3 text-gray-300 leading-7 text-sm">
+<p data-i18n="notice" class="mt-3 text-gray-300 leading-7 text-sm">
 Nachdem du das Formular abgesendet hast, erhältst du nach der Bearbeitung eine Antwort an deine angegebene E-Mail-Adresse.
 </p>
 
@@ -256,6 +256,116 @@ Mit dem Absenden bestätigst du, dass deine Angaben korrekt sind. Deine Registri
 </div>
 
 </section>
+<script>
 
+const translations = {
+
+de: {
+
+welcome:"🚀 Willkommen bei LokroMAIL",
+
+your:"Deine neue",
+
+address:"Adresse.",
+
+description:
+"Erhalte deine persönliche kostenlose E-Mail-Adresse mit einer unserer Domains.",
+
+registration:"Registrierung",
+
+name:"Vollständiger Name",
+
+age:"Alter",
+
+oldEmail:"Bisherige E-Mail-Adresse",
+
+username:"Gewünschter Benutzername",
+
+submit:"✨ Registrierung absenden",
+
+noticeTitle:"📨 Wichtiger Hinweis",
+
+notice:
+"Nachdem du das Formular abgesendet hast, erhältst du nach der Bearbeitung eine Antwort an deine angegebene E-Mail-Adresse.",
+
+sender:
+"Die Antwort wird von lokrogamer29@gmail.com oder lokrogaming26@gmail.com gesendet und enthält alle Informationen zu deiner neuen LokroMAIL-Adresse."
+
+},
+
+
+en: {
+
+welcome:"🚀 Welcome to LokroMAIL",
+
+your:"Your new",
+
+address:"address.",
+
+description:
+"Get your personal free email address with one of our domains.",
+
+registration:"Registration",
+
+name:"Full name",
+
+age:"Age",
+
+oldEmail:"Previous email address",
+
+username:"Desired username",
+
+submit:"✨ Submit registration",
+
+noticeTitle:"📨 Important notice",
+
+notice:
+"After submitting the form, you will receive a reply to your provided email address after processing.",
+
+sender:
+"The reply will be sent from lokrogamer29@gmail.com or lokrogaming26@gmail.com and contains all information about your new LokroMAIL address."
+
+}
+
+};
+
+
+
+function setLanguage(lang){
+
+localStorage.setItem(
+"lokromail-language",
+lang
+);
+
+
+document
+.querySelectorAll("[data-i18n]")
+.forEach(element=>{
+
+const key = element.dataset.i18n;
+
+if(translations[lang][key]){
+
+element.innerHTML =
+translations[lang][key];
+
+}
+
+});
+
+}
+
+
+
+const savedLanguage =
+localStorage.getItem("lokromail-language")
+|| "de";
+
+
+setLanguage(savedLanguage);
+
+
+</script>
 </body>
 </html>
